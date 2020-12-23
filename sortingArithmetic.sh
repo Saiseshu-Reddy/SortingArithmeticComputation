@@ -12,37 +12,35 @@ echo "The Taken Inputs Are $a $b $c"
 p=$(( a+(b*c) ))
 q=$(( (a*b)+c ))
 r=$(( c+(a/b) ))
-s=$(( a%(b/c) ))
+s=$(( a%b/c ))
+
 
 echo "The Result is" $p
 echo "The Result is" $q
 echo "The Result is" $r
-echo "The result is" $s
+echo "The Result is" $s
 
-declare -A res	#saving results in a dictionary
-
+declare -A res
 res[0]=$p
 res[1]=$q
 res[2]=$r
 res[3]=$s
 
-array[((count++))]=${res[1]}	#Saving the results in dictionary into array
+array[((count++))]=${res[1]}
 array[((count++))]=${res[2]}
 array[((count++))]=${res[3]}
 array[((count++))]=${res[4]}
-echo -ne "\n Index Numbers : ${!array[@]}"
 
-echo -ne "\n Index Numbers : ${array[@]}
-
+echo "Array Is ${array[@]}"
 for ((i = 0; i<4-1; i++))
 do
 
     for((j = 0; j<4-i-1; j++))
     do
 
-        if [ ${array[$j]} -lt ${array[$((j+1))]} ]
+        if [ ${array[$j]} -gt ${array[$((j+1))]} ]
         then
-            # swap code to sort the array
+            # swap
             temp=${array[j]}
             array[j]=${array[$((j+1))]}
             array[$((j+1))]=$temp
