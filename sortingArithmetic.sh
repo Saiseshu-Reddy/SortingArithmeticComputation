@@ -11,6 +11,8 @@ echo "The Taken Inputs Are $a $b $c"
 
 p=$(( a+(b*c) ))
 q=$(( (a*b)+c ))
+r=$(( c+(a/b) ))
 
 echo "The Result is" $p
 echo "The Result is" $q
+echo "The Result is" $r
