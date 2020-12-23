@@ -10,5 +10,7 @@ read -p "Enter Third Number : " c
 echo "The Taken Inputs Are $a $b $c"
 
 p=$(( a+(b*c) ))
+q=$(( (a*b)+c ))
 
 echo "The Result is" $p
+echo "The Result is" $q
